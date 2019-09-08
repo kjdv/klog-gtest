@@ -23,6 +23,7 @@ install(TARGETS klog-gtest
         ARCHIVE DESTINATION lib COMPONENT lib
 )
 install(FILES Klog-gtestConfig.cmake DESTINATION share/klog-gtest)
+install(FILES lib/include/.no_headers DESTINATION include/klog-gtest)
 
 install(EXPORT Klog-gtestTargets DESTINATION share/klog-gtest NAMESPACE Klog-gtest::)
 export(TARGETS klog-gtest NAMESPACE Klog-gtest:: FILE ${CMAKE_CURRENT_BINARY_DIR}/Klog-gtestTargers.cmake)
