@@ -21,7 +21,6 @@ add_subdirectory(examples)
 install(TARGETS klog_gtest
         EXPORT Klog_gtestTargets
         ARCHIVE DESTINATION lib COMPONENT lib
-        PUBLIC_HEADER DESTINATION include/klog_gtest COMPONENT dev
 )
 install(FILES Klog_gtestConfig.cmake DESTINATION share/klog_gtest)
 

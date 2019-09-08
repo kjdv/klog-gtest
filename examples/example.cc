@@ -1,7 +1,22 @@
-#include <sample.hh>
-#include <iostream>
+#include <gtest/gtest.h>
+#include <klog/logger.hh>
 
-int main() {
-  std::cout << klog_gtest::public_function() << '\n';
-  return 0;
+namespace {
+
+klog::logger<> log("testing");
+
+TEST(logging, failing_test)
+{
+  log.info("starting failing test");
+  EXPECT_EQ(5, 2+2);
+  log.info("ending failing test");
+}
+
+TEST(logging, succeeding_test)
+{
+  log.info("starting succeeding test");
+  EXPECT_EQ(5, 2+3);
+  log.info("ending succeeding test");
+}
+
 }
