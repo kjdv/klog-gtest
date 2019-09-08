@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(klog_gtest)
+project(klog-gtest)
 set(CMAKE_CXX_STANDARD 17)
 
 include(GoogleTest)
@@ -18,11 +18,11 @@ add_subdirectory(lib)
 add_subdirectory(examples)
 
 # install rules
-install(TARGETS klog_gtest
-        EXPORT Klog_gtestTargets
+install(TARGETS klog-gtest
+        EXPORT Klog-gtestTargets
         ARCHIVE DESTINATION lib COMPONENT lib
 )
-install(FILES Klog_gtestConfig.cmake DESTINATION share/klog_gtest)
+install(FILES Klog-gtestConfig.cmake DESTINATION share/klog-gtest)
 
-install(EXPORT Klog_gtestTargets DESTINATION share/klog_gtest NAMESPACE Klog_gtest::)
-export(TARGETS klog_gtest NAMESPACE Klog_gtest:: FILE ${CMAKE_CURRENT_BINARY_DIR}/Klog_gtestTargers.cmake)
+install(EXPORT Klog-gtestTargets DESTINATION share/klog-gtest NAMESPACE Klog-gtest::)
+export(TARGETS klog-gtest NAMESPACE Klog-gtest:: FILE ${CMAKE_CURRENT_BINARY_DIR}/Klog-gtestTargers.cmake)
