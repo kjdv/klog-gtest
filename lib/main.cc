@@ -14,7 +14,7 @@ class log_capture : public EmptyTestEventListener
 public:
   explicit log_capture()
   {
-    set_consumer(std::make_unique<ostream_consumer>(d_stream, loglevel::all, "{severity} [{tag}] [{context}] {msg}\n"));
+    set_consumer(std::make_unique<ostream_consumer>(d_stream, loglevel::all, "thread={thread} {severity} [{tag}] [{context}] {msg}\n"));
   }
 
   ~log_capture()
